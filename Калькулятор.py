@@ -1,32 +1,33 @@
 # Запрашиваем у пользователя два числа и знак операции
-x = int(input('Введите первое число: '))
-y = int(input('Введите второе число: '))
+numb_1 = int(input('Введите первое число: '))
+numb_2 = int(input('Введите второе число: '))
 sign = input('Введите знак: ')
-
 # Создаем бесконечный цикл, который будет продолжаться, пока пользователь не введет "ЗАКОНЧИТЬ"
 while True:
     # Выполняем операцию в зависимости от введенного знака
-    if sign == '+':
-        print(x, sign, y, '=', x + y)
-        result = x + y
+    if numb_2 == 0 and sign == '/':
+        print('На ноль делить нельзя')
+    elif sign == '+':
+        print(numb_1, sign, numb_2, '=', numb_1 + numb_2)
+        result = numb_1 + numb_2
     elif sign == '-':
-        print(x, sign, y, '=', x - y)
-        result = x - y
+        print(numb_1, sign, numb_2, '=', numb_1 - numb_2)
+        result = numb_1 - numb_2
     elif sign == '*':
-        print(x, sign, y, '=', x * y)
-        result = x * y
-    elif sign == '/':
-        print(x, sign, y, '=', x / y)
-        result = x / y
+        print(numb_1, sign, numb_2, '=', numb_1 * numb_2)
+        result = numb_1 * numb_2
+    elif sign == '/' :
+        print(numb_1, sign, numb_2, '=', numb_1 / numb_2)
+        result = numb_1 / numb_2
     elif sign == '**':
-        print(x, sign, y, '=', x ** y)
-        result = x ** y
+        print(numb_1, sign, numb_2, '=', numb_1 ** numb_2)
+        result = numb_1 ** numb_2
     elif sign == '//':
-        print(x, sign, y, '=', x // y)
-        result = x // y
+        print(numb_1, sign, numb_2, '=', numb_1 // numb_2)
+        result = numb_1 // numb_2
     elif sign == '%':
-        print(x, sign, y, '=', x % y)
-        result = x % y
+        print(numb_1, sign, numb_2, '=', numb_1 % numb_2)
+        result = numb_1 % numb_2
     else:
         print('Ошибка ввода переменной')
 
@@ -35,8 +36,8 @@ while True:
 
     # Если пользователь вводит "ДА" или "да", "YES" или "yes", то запрашиваем новые числа и знак
     if TF in ['ДА', 'да', 'YES', 'yes']:
-        x = int(input('Введите первое число: '))
-        y = int(input('Введите второе число: '))
+        numb_1 = int(input('Введите первое число: '))
+        numb_2 = int(input('Введите второе число: '))
         sign = input('Введите знак: ')
 
     # Если пользователь вводит "НЕТ" или "нет", "NO" или "no", то запрашиваем, хочет ли он продолжить с текущим выражением или закончить программу
@@ -49,6 +50,6 @@ while True:
 
         # Если пользователь вводит "ПРОДОЛЖИТЬ" или "продолжить", то продолжаем цикл с текущим выражением
         elif end_or_contin in ['ПРОДОЛЖИТЬ', 'продолжить', 'continue', 'continue']:
-            x = result
-            y = int(input('Введите второе число: '))
+            numb_1 = result
+            numb_2 = int(input('Введите второе число: '))
             sign = input('Введите знак: ')
